@@ -79,7 +79,7 @@ const Navigation = () => {
             {t('nav.gallery')}
           </li>
           <li
-            onClick={() => scrollToSection('booking')}
+            onClick={() => scrollToSection('contact')}
             className="cursor-pointer hover:text-gold-600 transition-colors duration-300"
           >
             {t('nav.contact')}
@@ -157,7 +157,7 @@ const Navigation = () => {
                 {t('nav.gallery')}
               </li>
               <li
-                onClick={() => scrollToSection('booking')}
+                onClick={() => scrollToSection('contact')}
                 className="cursor-pointer hover:text-gold-600 transition-colors duration-300 py-2"
               >
                 {t('nav.contact')}
