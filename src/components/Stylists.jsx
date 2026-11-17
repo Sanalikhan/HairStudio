@@ -58,7 +58,7 @@ const Stylists = () => {
   ];
 
   return (
-    <section className="py-28 px-[8%] bg-white">
+    <section id="stylists" className="py-28 px-[8%] bg-white">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}

@@ -9,6 +9,7 @@ const Booking = () => {
 
   return (
     <section
+      id="booking"
       ref={ref}
       className="relative py-32 px-[8%] text-center text-white overflow-hidden"
     >

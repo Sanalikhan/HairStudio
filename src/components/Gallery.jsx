@@ -40,7 +40,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="py-28 px-[8%] bg-cream-50">
+    <section id="gallery" className="py-28 px-[8%] bg-cream-50">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
