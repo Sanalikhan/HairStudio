@@ -3,6 +3,8 @@ import './i18n/config';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import Gallery from './components/Gallery';
+import Stylists from './components/Stylists';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
 
@@ -21,6 +23,8 @@ function App() {
       <Navigation />
       <Hero />
       <Services />
+      <Gallery />
+      <Stylists />
       <Booking />
       <Footer />
     </div>

@@ -33,6 +33,14 @@ const resources = {
         treatmentDesc: 'Deep conditioning and keratin smoothing.',
         treatmentPrice: 'from $60'
       },
+      stylists: {
+        title: 'Our Stylists',
+        description: 'Meet our talented team of hair artists dedicated to bringing your vision to life.',
+        seniorStylist: 'Senior Stylist',
+        colorSpecialist: 'Color Specialist',
+        masterStylist: 'Master Stylist',
+        stylist: 'Stylist'
+      },
       booking: {
         title: 'Ready for a fresh look?',
         description: "Pick a time that suits you. We'll send a reminder before your visit.",
@@ -73,6 +81,14 @@ const resources = {
         treatmentTitle: 'Bakım',
         treatmentDesc: 'Derin krem banyosu ve keratin bakımı.',
         treatmentPrice: '60 TL\'den'
+      },
+      stylists: {
+        title: 'Stilistlerimiz',
+        description: 'Hayallerinizi gerçeğe dönüştürmeye adanmış yetenekli saç sanatçıları ekibimizle tanışın.',
+        seniorStylist: 'Kıdemli Stilist',
+        colorSpecialist: 'Renk Uzmanı',
+        masterStylist: 'Usta Stilist',
+        stylist: 'Stilist'
       },
       booking: {
         title: 'Yeni bir görünüme hazır mısınız?',
