@@ -30,8 +30,9 @@ const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className="py-28 px-[8%] bg-white"
+      className="py-20 lg:py-32 px-6 lg:px-12 bg-white"
     >
+      <div className="max-w-7xl mx-auto">
       <motion.h2
         initial={{ opacity: 0, y: 60 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
@@ -210,6 +211,7 @@ const Contact = () => {
             {t('contact.form.submit')}
           </motion.button>
         </motion.form>
+      </div>
       </div>
     </section>
   );

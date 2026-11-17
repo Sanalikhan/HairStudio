@@ -22,13 +22,13 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center px-[8%] text-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background Image with Overlay */}
       <motion.div
         style={{ y }}
         className="absolute inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(20,14,10,0.75)] via-[rgba(20,14,10,0.25)] to-[rgba(20,14,10,0.1)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-dark/90 via-dark/70 to-dark/50" />
         <motion.img
           style={{
             x: mousePosition.x,
@@ -41,63 +41,101 @@ const Hero = () => {
       </motion.div>
 
       {/* Content */}
-      <motion.div
-        style={{ opacity }}
-        className="relative z-10 max-w-[620px]"
-      >
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 0.85, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-xs tracking-[4px] uppercase mb-6"
+          style={{ opacity }}
+          className="max-w-3xl"
         >
-          {t('hero.tag')}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="inline-block bg-gold-600/20 backdrop-blur-sm border border-gold-500/30 px-6 py-2 rounded-full text-sm tracking-[3px] uppercase mb-8 text-gold-400 font-semibold"
+          >
+            {t('hero.tag')}
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] font-bold mb-8 text-white"
+          >
+            {t('hero.title')}{' '}
+            <span className="block mt-2">
+              <em className="italic font-bold text-gold-500 text-shadow-soft">
+                {t('hero.titleEm')}
+              </em>{' '}
+              {t('hero.titleEnd')}
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.7 }}
+            className="text-lg lg:text-xl font-light max-w-xl mb-12 text-gray-200 leading-relaxed"
+          >
+            {t('hero.description')}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.9 }}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center justify-center bg-gold-600 text-white px-10 py-4 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-gold-500 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            >
+              {t('hero.cta')}
+            </motion.a>
+            <motion.a
+              href="#services"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-4 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-white/20 transition-all duration-300"
+            >
+              Explore Services
+            </motion.a>
+          </motion.div>
         </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="font-serif text-[78px] leading-[1.05] font-medium mb-7"
-        >
-          {t('hero.title')}{' '}
-          <em className="italic font-bold text-gold-500 text-shadow-soft">
-            {t('hero.titleEm')}
-          </em>{' '}
-          {t('hero.titleEnd')}
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 0.9, y: 0 }}
-          transition={{ duration: 1, delay: 0.7 }}
-          className="text-lg font-light max-w-[460px] mb-10"
-        >
-          {t('hero.description')}
-        </motion.p>
-
-        <motion.a
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.9 }}
-          href="#"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
-          className="inline-block bg-white text-dark px-10 py-[18px] text-[13px] tracking-[2px] uppercase font-medium hover:bg-cream-100 transition-all duration-300"
-        >
-          {t('hero.cta')}
-        </motion.a>
-      </motion.div>
+      </div>
 
       {/* Rating Card */}
       <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.1 }}
-        className="absolute right-[8%] bottom-[60px] bg-white/[0.14] backdrop-blur-glass border border-white/30 px-7 py-[18px] text-sm hidden lg:block"
+        className="absolute right-6 lg:right-12 bottom-12 bg-white/95 backdrop-blur-xl border border-gray-200 px-8 py-6 rounded-2xl shadow-2xl hidden lg:block"
       >
-        <b className="block font-serif text-[30px]">{t('hero.rating')}</b>
-        {t('hero.ratingText')}
+        <div className="flex items-center gap-4">
+          <div>
+            <div className="flex items-center gap-1 mb-1">
+              <b className="font-serif text-4xl text-dark">{t('hero.rating')}</b>
+            </div>
+            <p className="text-sm text-gray-600 font-medium">{t('hero.ratingText')}</p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
+        >
+          <motion.div className="w-1 h-2 bg-white rounded-full" />
+        </motion.div>
       </motion.div>
     </section>
   );

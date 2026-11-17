@@ -58,7 +58,8 @@ const Stylists = () => {
   ];
 
   return (
-    <section id="stylists" className="py-28 px-[8%] bg-white">
+    <section id="stylists" className="py-20 lg:py-32 px-6 lg:px-12 bg-gradient-to-b from-cream-50 to-white">
+      <div className="max-w-7xl mx-auto">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
@@ -77,10 +78,11 @@ const Stylists = () => {
         {t('stylists.description')}
       </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {stylists.map((stylist, index) => (
           <StylistCard key={index} {...stylist} delay={index * 0.15} />
         ))}
+      </div>
       </div>
     </section>
   );

@@ -83,7 +83,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-28 px-[8%] bg-cream-50">
+    <section className="py-20 lg:py-32 px-6 lg:px-12 bg-gradient-to-b from-white to-cream-50">
+      <div className="max-w-7xl mx-auto">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
@@ -157,6 +158,7 @@ const Testimonials = () => {
             </svg>
           </motion.button>
         </div>
+      </div>
       </div>
     </section>
   );

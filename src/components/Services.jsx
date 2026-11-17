@@ -57,7 +57,8 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-28 px-[8%] bg-white">
+    <section id="services" className="py-20 lg:py-32 px-6 lg:px-12 bg-gradient-to-b from-white to-cream-50">
+      <div className="max-w-7xl mx-auto">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
@@ -68,10 +69,11 @@ const Services = () => {
         {t('services.title')}
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
+      </div>
       </div>
     </section>
   );

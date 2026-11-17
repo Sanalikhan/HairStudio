@@ -40,7 +40,8 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-28 px-[8%] bg-cream-50">
+    <section id="gallery" className="py-20 lg:py-32 px-6 lg:px-12 bg-white">
+      <div className="max-w-7xl mx-auto">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
@@ -51,10 +52,11 @@ const Gallery = () => {
         Gallery
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {images.map((image, index) => (
           <GalleryImage key={index} image={image} delay={index * 0.1} />
         ))}
+      </div>
       </div>
     </section>
   );

@@ -11,8 +11,9 @@ const Booking = () => {
     <section
       id="booking"
       ref={ref}
-      className="relative py-32 px-[8%] text-center text-white overflow-hidden"
+      className="relative py-20 lg:py-32 px-6 lg:px-12 text-center text-white overflow-hidden"
     >
+      <div className="max-w-5xl mx-auto">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(30,20,14,0.7)] to-[rgba(30,20,14,0.7)]" />
@@ -54,6 +55,7 @@ const Booking = () => {
         >
           {t('booking.cta')}
         </motion.a>
+      </div>
       </div>
     </section>
   );
