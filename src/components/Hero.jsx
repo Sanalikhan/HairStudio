@@ -1,23 +1,50 @@
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX - window.innerWidth / 2) / 50,
+        y: (e.clientY - window.innerHeight / 2) / 50
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
     <section className="relative h-screen min-h-[600px] flex items-center px-[8%] text-white overflow-hidden">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+      <motion.div
+        style={{ y }}
+        className="absolute inset-0 z-0"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(20,14,10,0.75)] via-[rgba(20,14,10,0.25)] to-[rgba(20,14,10,0.1)]" />
-        <img
+        <motion.img
+          style={{
+            x: mousePosition.x,
+            y: mousePosition.y
+          }}
           src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80"
           alt="Salon"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-110"
         />
-      </div>
+      </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[620px]">
+      <motion.div
+        style={{ opacity }}
+        className="relative z-10 max-w-[620px]"
+      >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 0.85, y: 0 }}
@@ -60,7 +87,7 @@ const Hero = () => {
         >
           {t('hero.cta')}
         </motion.a>
-      </div>
+      </motion.div>
 
       {/* Rating Card */}
       <motion.div

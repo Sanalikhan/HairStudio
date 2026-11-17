@@ -41,6 +41,12 @@ const resources = {
         masterStylist: 'Master Stylist',
         stylist: 'Stylist'
       },
+      testimonials: {
+        title: 'What Our Clients Say',
+        review1: 'Best salon experience I\'ve ever had. Emma completely transformed my hair and the atmosphere was so relaxing.',
+        review2: 'I\'ve been coming here for two years and wouldn\'t go anywhere else. Consistently amazing results every time.',
+        review3: 'The team here is incredibly skilled and attentive. They really listen to what you want and deliver beyond expectations.'
+      },
       booking: {
         title: 'Ready for a fresh look?',
         description: "Pick a time that suits you. We'll send a reminder before your visit.",
@@ -89,6 +95,12 @@ const resources = {
         colorSpecialist: 'Renk Uzmanı',
         masterStylist: 'Usta Stilist',
         stylist: 'Stilist'
+      },
+      testimonials: {
+        title: 'Müşterilerimiz Ne Diyor',
+        review1: 'Şimdiye kadarki en iyi kuaför deneyimim. Emma saçımı tamamen değiştirdi ve atmosfer çok rahatlatıcıydı.',
+        review2: 'İki yıldır buraya geliyorum ve başka bir yere gitmem. Her seferinde sürekli olarak harika sonuçlar.',
+        review3: 'Buradaki ekip inanılmaz yetenekli ve özenli. Gerçekten ne istediğinizi dinliyorlar ve beklentilerin ötesinde sonuçlar veriyorlar.'
       },
       booking: {
         title: 'Yeni bir görünüme hazır mısınız?',

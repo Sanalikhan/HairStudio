@@ -5,8 +5,10 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Gallery from './components/Gallery';
 import Stylists from './components/Stylists';
+import Testimonials from './components/Testimonials';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 function App() {
   useEffect(() => {
@@ -25,8 +27,10 @@ function App() {
       <Services />
       <Gallery />
       <Stylists />
+      <Testimonials />
       <Booking />
       <Footer />
+      <BackToTop />
     </div>
   );
 }
