@@ -41,15 +41,15 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/98 backdrop-blur-xl shadow-lg' : 'bg-white'
+        scrolled ? 'bg-white/98 backdrop-blur-xl shadow-lg' : 'bg-white shadow-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 lg:px-12 py-5">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 lg:px-12 py-6 lg:py-7">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="font-serif text-[32px] tracking-wide text-dark cursor-pointer font-bold"
+          className="font-serif text-[34px] lg:text-[36px] tracking-wide text-dark cursor-pointer font-bold"
         >
           Lumière
         </motion.div>
@@ -58,29 +58,29 @@ const Navigation = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="hidden lg:flex gap-10 list-none text-[15px] font-medium text-dark"
+          className="hidden lg:flex gap-12 list-none text-[15px] font-medium text-dark"
         >
           <li
             onClick={() => scrollToSection('services')}
-            className="cursor-pointer hover:text-gold-600 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full"
+            className="cursor-pointer hover:text-gold-600 transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full"
           >
             {t('nav.services')}
           </li>
           <li
             onClick={() => scrollToSection('stylists')}
-            className="cursor-pointer hover:text-gold-600 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full"
+            className="cursor-pointer hover:text-gold-600 transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full"
           >
             {t('nav.stylists')}
           </li>
           <li
             onClick={() => scrollToSection('gallery')}
-            className="cursor-pointer hover:text-gold-600 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full"
+            className="cursor-pointer hover:text-gold-600 transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full"
           >
             {t('nav.gallery')}
           </li>
           <li
             onClick={() => scrollToSection('contact')}
-            className="cursor-pointer hover:text-gold-600 transition-colors duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full"
+            className="cursor-pointer hover:text-gold-600 transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full"
           >
             {t('nav.contact')}
           </li>
@@ -90,22 +90,22 @@ const Navigation = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="flex items-center gap-4"
+          className="flex items-center gap-5"
         >
           <button
             onClick={toggleLanguage}
-            className="text-sm font-semibold text-dark hover:text-gold-600 transition-colors duration-300 uppercase tracking-wider px-3 py-2 rounded-md hover:bg-cream-50"
+            className="text-sm font-semibold text-dark hover:text-gold-600 transition-colors duration-300 uppercase tracking-wider px-4 py-2.5 rounded-lg hover:bg-cream-50"
           >
             {i18n.language === 'en' ? 'TR' : 'EN'}
           </button>
-          <button className="hidden lg:block bg-gold-600 text-white px-8 py-3 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-105 shadow-md">
+          <button className="hidden lg:block bg-gold-600 text-white px-9 py-3.5 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
             {t('nav.bookNow')}
           </button>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-dark hover:bg-cream-50 rounded-md transition-colors"
+            className="lg:hidden p-2.5 text-dark hover:bg-cream-50 rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -135,35 +135,35 @@ const Navigation = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
+            className="lg:hidden bg-white border-t border-gray-200 shadow-xl"
           >
-            <ul className="flex flex-col py-6 px-6 gap-2 text-dark max-w-7xl mx-auto">
+            <ul className="flex flex-col py-8 px-6 gap-2 text-dark max-w-7xl mx-auto">
               <li
                 onClick={() => scrollToSection('services')}
-                className="cursor-pointer hover:text-gold-600 hover:bg-cream-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+                className="cursor-pointer hover:text-gold-600 hover:bg-cream-50 transition-all duration-300 py-4 px-5 rounded-lg font-medium text-[15px]"
               >
                 {t('nav.services')}
               </li>
               <li
                 onClick={() => scrollToSection('stylists')}
-                className="cursor-pointer hover:text-gold-600 hover:bg-cream-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+                className="cursor-pointer hover:text-gold-600 hover:bg-cream-50 transition-all duration-300 py-4 px-5 rounded-lg font-medium text-[15px]"
               >
                 {t('nav.stylists')}
               </li>
               <li
                 onClick={() => scrollToSection('gallery')}
-                className="cursor-pointer hover:text-gold-600 hover:bg-cream-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+                className="cursor-pointer hover:text-gold-600 hover:bg-cream-50 transition-all duration-300 py-4 px-5 rounded-lg font-medium text-[15px]"
               >
                 {t('nav.gallery')}
               </li>
               <li
                 onClick={() => scrollToSection('contact')}
-                className="cursor-pointer hover:text-gold-600 hover:bg-cream-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+                className="cursor-pointer hover:text-gold-600 hover:bg-cream-50 transition-all duration-300 py-4 px-5 rounded-lg font-medium text-[15px]"
               >
                 {t('nav.contact')}
               </li>
-              <li className="pt-4">
-                <button className="w-full bg-gold-600 text-white px-6 py-3 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-gold-500 transition-all duration-300 shadow-md">
+              <li className="pt-6 mt-2 border-t border-gray-100">
+                <button className="w-full bg-gold-600 text-white px-6 py-4 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-gold-500 transition-all duration-300 shadow-md hover:shadow-lg">
                   {t('nav.bookNow')}
                 </button>
               </li>
