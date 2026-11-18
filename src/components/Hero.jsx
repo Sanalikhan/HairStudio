@@ -59,14 +59,14 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] font-bold mb-8 text-white"
+            className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] font-bold mb-8"
           >
-            {t('hero.title')}{' '}
+            <span className="text-gold-500">{t('hero.title')}</span>{' '}
             <span className="block mt-2">
-              <em className="italic font-bold text-gold-500 text-shadow-soft">
+              <em className="italic font-bold text-white text-shadow-soft">
                 {t('hero.titleEm')}
               </em>{' '}
-              {t('hero.titleEnd')}
+              <span className="text-gold-500">{t('hero.titleEnd')}</span>
             </span>
           </motion.h1>
 
@@ -97,7 +97,7 @@ const Hero = () => {
               href="#services"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-4 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center justify-center bg-gold-500 text-dark px-10 py-4 text-sm font-bold tracking-wide uppercase rounded-full hover:bg-gold-400 transition-all duration-300 shadow-xl hover:shadow-2xl border-2 border-gold-400"
             >
               Explore Services
             </motion.a>
