@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-br from-dark via-[#1a1a1a] to-dark text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-28 lg:py-36">
 
         {/* Brand Section - Centered */}
         <motion.div
@@ -28,7 +28,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
           <h3 className="font-serif text-5xl lg:text-6xl text-white mb-6 font-bold tracking-wide">Lumière</h3>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
@@ -63,7 +63,7 @@ const Footer = () => {
         </motion.div>
 
         {/* Info Cards - Same Background */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-24 max-w-6xl mx-auto">
 
           {/* Contact Info Card */}
           <motion.div

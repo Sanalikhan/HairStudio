@@ -57,14 +57,14 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 lg:py-32 px-6 lg:px-12 bg-gradient-to-b from-white to-cream-50">
+    <section id="services" className="py-28 lg:py-36 px-6 lg:px-12 bg-gradient-to-b from-white to-cream-50">
       <div className="max-w-7xl mx-auto">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
         animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
         transition={{ duration: 1, ease: [0.2, 0.7, 0.2, 1] }}
-        className="font-serif text-[44px] font-medium text-center mb-16"
+        className="font-serif text-[44px] font-medium text-center mb-20"
       >
         {t('services.title')}
       </motion.h2>

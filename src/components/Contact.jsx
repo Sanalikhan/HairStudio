@@ -30,14 +30,14 @@ const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className="py-20 lg:py-32 px-6 lg:px-12 bg-white"
+      className="py-28 lg:py-36 px-6 lg:px-12 bg-white"
     >
       <div className="max-w-7xl mx-auto">
       <motion.h2
         initial={{ opacity: 0, y: 60 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
         transition={{ duration: 1, ease: [0.2, 0.7, 0.2, 1] }}
-        className="font-serif text-[44px] font-medium text-center mb-4"
+        className="font-serif text-[44px] font-medium text-center mb-6"
       >
         {t('contact.title')}
       </motion.h2>
@@ -46,12 +46,12 @@ const Contact = () => {
         initial={{ opacity: 0, y: 60 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
         transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
-        className="text-center text-gray-600 mb-16 max-w-2xl mx-auto"
+        className="text-center text-gray-600 mb-20 max-w-2xl mx-auto text-lg"
       >
         {t('contact.description')}
       </motion.p>
 
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
         {/* Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}

@@ -11,12 +11,11 @@ const Booking = () => {
     <section
       id="booking"
       ref={ref}
-      className="relative py-20 lg:py-32 px-6 lg:px-12 text-center text-white overflow-hidden"
+      className="relative min-h-[600px] lg:min-h-[700px] flex items-center justify-center text-center text-white overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(30,20,14,0.7)] to-[rgba(30,20,14,0.7)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/75 via-dark/60 to-dark/75" />
         <img
           src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1920&q=80"
           alt="Booking"
@@ -25,37 +24,38 @@ const Booking = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-          transition={{ duration: 1, ease: [0.2, 0.7, 0.2, 1] }}
-          className="font-serif text-[52px] font-medium mb-5"
-        >
-          {t('booking.title')}
-        </motion.h2>
+      <div className="relative z-10 px-6 lg:px-12 py-24 lg:py-32 w-full">
+        <div className="max-w-4xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 60 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+            transition={{ duration: 1, ease: [0.2, 0.7, 0.2, 1] }}
+            className="font-serif text-5xl lg:text-6xl font-medium mb-8"
+          >
+            {t('booking.title')}
+          </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 0.85, y: 0 } : { opacity: 0, y: 60 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
-          className="mb-9"
-        >
-          {t('booking.description')}
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 60 }}
+            animate={isInView ? { opacity: 0.95, y: 0 } : { opacity: 0, y: 60 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
+            className="mb-12 text-lg lg:text-xl text-gray-200"
+          >
+            {t('booking.description')}
+          </motion.p>
 
-        <motion.a
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
-          href="#"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
-          className="inline-block bg-white text-dark px-10 py-[18px] text-[13px] tracking-[2px] uppercase hover:bg-cream-100 transition-colors duration-300"
-        >
-          {t('booking.cta')}
-        </motion.a>
-      </div>
+          <motion.a
+            initial={{ opacity: 0, y: 60 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
+            href="#"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block bg-white text-dark px-12 py-5 text-sm tracking-[2px] uppercase font-semibold hover:bg-gold-600 hover:text-white transition-all duration-300 shadow-xl"
+          >
+            {t('booking.cta')}
+          </motion.a>
+        </div>
       </div>
     </section>
   );

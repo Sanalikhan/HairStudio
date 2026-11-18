@@ -58,14 +58,14 @@ const Stylists = () => {
   ];
 
   return (
-    <section id="stylists" className="py-20 lg:py-32 px-6 lg:px-12 bg-gradient-to-b from-cream-50 to-white">
+    <section id="stylists" className="py-28 lg:py-36 px-6 lg:px-12 bg-gradient-to-b from-cream-50 to-white">
       <div className="max-w-7xl mx-auto">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
         animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
         transition={{ duration: 1, ease: [0.2, 0.7, 0.2, 1] }}
-        className="font-serif text-[44px] font-medium text-center mb-4"
+        className="font-serif text-[44px] font-medium text-center mb-6"
       >
         {t('stylists.title')}
       </motion.h2>
@@ -73,7 +73,7 @@ const Stylists = () => {
         initial={{ opacity: 0, y: 60 }}
         animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
         transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.7, 0.2, 1] }}
-        className="text-center text-gray-600 mb-16 max-w-2xl mx-auto"
+        className="text-center text-gray-600 mb-20 max-w-2xl mx-auto text-lg"
       >
         {t('stylists.description')}
       </motion.p>
