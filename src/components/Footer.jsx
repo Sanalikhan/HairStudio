@@ -28,7 +28,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-24 max-w-4xl mx-auto"
+          className="text-center mb-32 lg:mb-40 max-w-4xl mx-auto"
         >
           <h3 className="font-serif text-5xl lg:text-6xl text-white mb-6 font-bold tracking-wide">Lumière</h3>
           <p className="text-gray-400 text-lg leading-relaxed mb-10">
