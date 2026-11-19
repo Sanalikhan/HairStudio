@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './i18n/config';
 import LoadingScreen from './components/LoadingScreen';
 import Navigation from './components/Navigation';
@@ -11,6 +12,21 @@ import Contact from './components/Contact';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import AppointmentPage from './pages/AppointmentPage';
+
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <Gallery />
+      <Stylists />
+      <Testimonials />
+      <Contact />
+      <Booking />
+    </>
+  );
+}
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,21 +47,18 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Router>
       <LoadingScreen isLoading={isLoading} />
       <div className="overflow-x-hidden">
         <Navigation />
-        <Hero />
-        <Services />
-        <Gallery />
-        <Stylists />
-        <Testimonials />
-        <Contact />
-        <Booking />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/appointment" element={<AppointmentPage />} />
+        </Routes>
         <Footer />
         <BackToTop />
       </div>
-    </>
+    </Router>
   );
 }
 

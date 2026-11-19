@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -19,8 +21,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-dark via-[#1a1a1a] to-dark text-gray-300">
-      <div className="w-full px-6 lg:px-12 py-28 lg:py-36">
+    <footer className="bg-gradient-to-br from-dark via-[#1a1a1a] to-dark text-gray-300 flex justify-center">
+      <div className="w-full max-w-7xl px-6 lg:px-12 py-28 lg:py-36">
 
         {/* Brand Section - Centered */}
         <motion.div
@@ -30,7 +32,12 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-center mb-32 lg:mb-40 max-w-4xl mx-auto"
         >
-          <h3 className="font-serif text-5xl lg:text-6xl text-white mb-6 font-bold tracking-wide">Lumière</h3>
+          <h3
+            onClick={() => navigate('/')}
+            className="font-serif text-5xl lg:text-6xl text-white mb-6 font-bold tracking-wide cursor-pointer hover:text-gold-400 transition-colors duration-300"
+          >
+            Lumière
+          </h3>
           <p className="text-gray-400 text-lg leading-relaxed mb-10">
             A calm, modern studio for cuts, colour and care. Experience luxury hair services.
           </p>
@@ -63,8 +70,8 @@ const Footer = () => {
         </motion.div>
 
         {/* Info Cards - Same Background */}
-        <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-24 justify-items-center md:justify-items-stretch">
+        <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-24 justify-items-center">
 
           {/* Contact Info Card */}
           <motion.div
@@ -72,7 +79,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-gold-600/50 transition-all duration-300 w-full max-w-sm md:max-w-none"
+            className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-gold-600/50 transition-all duration-300 w-full max-w-sm"
           >
             <h4 className="text-white font-semibold text-xl mb-8 tracking-wide flex items-center gap-3">
               <svg className="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +116,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-gold-600/50 transition-all duration-300 w-full max-w-sm md:max-w-none"
+            className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-gold-600/50 transition-all duration-300 w-full max-w-sm"
           >
             <h4 className="text-white font-semibold text-xl mb-8 tracking-wide flex items-center gap-3">
               <svg className="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,7 +146,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-gold-600/50 transition-all duration-300 w-full max-w-sm md:max-w-none"
+            className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-gold-600/50 transition-all duration-300 w-full max-w-sm"
           >
             <h4 className="text-white font-semibold text-xl mb-8 tracking-wide flex items-center gap-3">
               <svg className="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,7 +197,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -198,7 +205,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="pt-10 border-t border-white/10"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+          <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6 text-center">
             <p className="text-[15px] text-gray-500">
               {t('footer.copyright')}
             </p>

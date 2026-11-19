@@ -1,9 +1,11 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, useInView } from 'framer-motion';
 
 const Booking = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -44,17 +46,17 @@ const Booking = () => {
             {t('booking.description')}
           </motion.p>
 
-          <motion.a
+          <motion.button
             initial={{ opacity: 0, y: 60 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
-            href="#"
+            onClick={() => navigate('/appointment')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-block bg-white text-dark px-12 py-5 text-sm tracking-[2px] uppercase font-semibold hover:bg-gold-600 hover:text-white transition-all duration-300 shadow-xl"
+            className="inline-block bg-white text-dark px-14 py-6 text-sm tracking-[2px] uppercase font-semibold hover:bg-gold-600 hover:text-white transition-all duration-300 shadow-xl rounded-xl"
           >
             {t('booking.cta')}
-          </motion.a>
+          </motion.button>
         </div>
       </div>
     </section>

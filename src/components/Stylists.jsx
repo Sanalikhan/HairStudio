@@ -12,7 +12,7 @@ const StylistCard = ({ name, title, image, delay }) => {
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
       transition={{ duration: 1, delay, ease: [0.2, 0.7, 0.2, 1] }}
-      className="text-center group"
+      className="text-center group w-full max-w-xs mx-auto"
     >
       <div className="relative overflow-hidden mb-6">
         <motion.div
@@ -58,8 +58,8 @@ const Stylists = () => {
   ];
 
   return (
-    <section id="stylists" className="py-28 lg:py-36 px-6 lg:px-12 bg-gradient-to-b from-cream-50 to-white">
-      <div className="max-w-7xl mx-auto">
+    <section id="stylists" className="py-28 lg:py-36 px-6 lg:px-12 bg-gradient-to-b from-cream-50 to-white flex justify-center">
+      <div className="max-w-6xl w-full">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
@@ -78,7 +78,7 @@ const Stylists = () => {
         {t('stylists.description')}
       </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center max-w-5xl mx-auto">
         {stylists.map((stylist, index) => (
           <StylistCard key={index} {...stylist} delay={index * 0.15} />
         ))}

@@ -12,7 +12,7 @@ const ServiceCard = ({ image, title, description, price, delay }) => {
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
       transition={{ duration: 1, delay, ease: [0.2, 0.7, 0.2, 1] }}
-      className="group cursor-pointer"
+      className="group cursor-pointer text-center w-full max-w-sm mx-auto"
     >
       <motion.div
         whileHover={{ scale: 1.04 }}
@@ -57,8 +57,8 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-28 lg:py-36 px-6 lg:px-12 bg-gradient-to-b from-white to-cream-50">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-28 lg:py-36 px-6 lg:px-12 bg-gradient-to-b from-white to-cream-50 flex justify-center">
+      <div className="max-w-6xl w-full">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
@@ -69,7 +69,7 @@ const Services = () => {
         {t('services.title')}
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center max-w-5xl mx-auto">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}

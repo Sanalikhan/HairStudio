@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navigation = () => {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -49,7 +51,8 @@ const Navigation = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="font-serif text-[34px] lg:text-[36px] tracking-wide text-dark cursor-pointer font-bold"
+          onClick={() => navigate('/')}
+          className="font-serif text-[34px] lg:text-[36px] tracking-wide text-dark cursor-pointer font-bold hover:text-gold-600 transition-colors duration-300"
         >
           Lumière
         </motion.div>
@@ -94,11 +97,14 @@ const Navigation = () => {
         >
           <button
             onClick={toggleLanguage}
-            className="text-sm font-semibold text-dark hover:text-gold-600 transition-colors duration-300 uppercase tracking-wider px-4 py-2.5 rounded-lg hover:bg-cream-50"
+            className="text-sm font-semibold text-dark hover:text-gold-600 transition-colors duration-300 uppercase tracking-wider px-5 py-3 rounded-lg hover:bg-cream-50"
           >
             {i18n.language === 'en' ? 'TR' : 'EN'}
           </button>
-          <button className="hidden lg:block bg-gold-600 text-white px-9 py-3.5 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+          <button
+            onClick={() => navigate('/appointment')}
+            className="hidden lg:block bg-gold-600 text-white px-10 py-4 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-gold-500 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+          >
             {t('nav.bookNow')}
           </button>
 
@@ -163,7 +169,10 @@ const Navigation = () => {
                 {t('nav.contact')}
               </li>
               <li className="pt-6 mt-2 border-t border-gray-100">
-                <button className="w-full bg-gold-600 text-white px-6 py-4 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-gold-500 transition-all duration-300 shadow-md hover:shadow-lg">
+                <button
+                  onClick={() => navigate('/appointment')}
+                  className="w-full bg-gold-600 text-white px-8 py-5 text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-gold-500 transition-all duration-300 shadow-md hover:shadow-lg"
+                >
                   {t('nav.bookNow')}
                 </button>
               </li>

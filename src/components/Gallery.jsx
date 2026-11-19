@@ -12,7 +12,7 @@ const GalleryImage = ({ image, delay }) => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.8, delay, ease: [0.2, 0.7, 0.2, 1] }}
-      className="relative overflow-hidden group cursor-pointer"
+      className="relative overflow-hidden group cursor-pointer w-full max-w-sm mx-auto"
     >
       <motion.div
         whileHover={{ scale: 1.1 }}
@@ -40,8 +40,8 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-28 lg:py-36 px-6 lg:px-12 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section id="gallery" className="py-28 lg:py-36 px-6 lg:px-12 bg-white flex justify-center">
+      <div className="max-w-6xl w-full">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
@@ -52,7 +52,7 @@ const Gallery = () => {
         Gallery
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-5xl mx-auto">
         {images.map((image, index) => (
           <GalleryImage key={index} image={image} delay={index * 0.1} />
         ))}

@@ -83,8 +83,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-28 lg:py-36 px-6 lg:px-12 bg-gradient-to-b from-white to-cream-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-28 lg:py-36 px-6 lg:px-12 bg-gradient-to-b from-white to-cream-50 flex justify-center">
+      <div className="max-w-6xl w-full">
       <motion.h2
         ref={titleRef}
         initial={{ opacity: 0, y: 60 }}
@@ -95,7 +95,7 @@ const Testimonials = () => {
         {t('testimonials.title')}
       </motion.h2>
 
-      <div className="relative">
+      <div className="relative max-w-4xl mx-auto">
         {testimonials.map((testimonial, index) => (
           <TestimonialCard
             key={index}
