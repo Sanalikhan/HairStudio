@@ -99,7 +99,7 @@ const Hero = () => {
               href="#services"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center bg-gold-500 text-dark px-12 py-5 text-sm font-bold tracking-wide uppercase rounded-full hover:bg-gold-400 transition-all duration-300 shadow-xl hover:shadow-2xl border-2 border-gold-400"
+              className="inline-flex items-center justify-center bg-gold-500 text-black px-12 py-5 text-sm font-bold tracking-wide uppercase rounded-full hover:bg-gold-400 transition-all duration-300 shadow-xl hover:shadow-2xl border-2 border-gold-400"
             >
               Explore Services
             </motion.a>
